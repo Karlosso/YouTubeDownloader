@@ -26,12 +26,14 @@ class YT:
         # get informations
         self.url = input('Enter YouTube Url: ')
         yt_url = YouTube(self.url)
-        yt_video = yt_url.streams.get_audio_only()
+        yt_video = yt_url.streams.filter(only_audio=True).first()
 
         # start download
         print('Downloading ...')
-        os.chdir(self.config['download_path'])
-        yt_video.download()
+        out_file = yt_video.download(output_path=self.config['download_path'])
+        base, ext = os.path.splitext(out_file)
+        new_file = base + '.mp3'
+        os.rename(out_file, new_file)
         print('Download completed!')
 
 
