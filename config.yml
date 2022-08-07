@@ -1,2 +1,2 @@
 # Config File YouTubeDownloader
-download_path: C:\Users\Manuel Schulte\Desktop
+download_path: /home/example_user/ #Download Path
