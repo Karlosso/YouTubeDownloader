@@ -21,6 +21,12 @@ Then install all requirements
 $ pip install -r requirements.txt
 ```
 
+Adjust the config file and set your own download path
+
+```console
+$ vi config.yaml
+```
+
 Launch the Python script to start a download
 
 ```console
